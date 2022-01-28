@@ -20,7 +20,11 @@ required:true
 memberSince:{
     type: Date,
     default: Date.now
-}
+},
+comments: {
+    type: Array,
+    default: []
+  }
 
 
 })

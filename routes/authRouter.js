@@ -8,7 +8,6 @@ const jwt= require('jsonwebtoken')
 
 // sign up
 
-
 authRouter.post("/signup", (req, res, next) => {
     User.findOne({ username: req.body.username.toLowerCase()}, (err, user) => {
         if(err){

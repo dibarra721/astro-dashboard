@@ -23,6 +23,9 @@ mongoose.connect(
   app.use('/api', expressJwt({secret: process.env.SECRET, algorithms: ['HS256']}))
   app.use('/auth', require('./routes/authRouter.js'))
   app.use('/api/dashboard', require('./routes/dashboardRouter.js'))
+//   app.use('/api/forum', require('./routes/forumRouter.js'))
+  app.use('/api/waterforum', require('./routes/waterForumRouter.js'))
+
 
 
 
