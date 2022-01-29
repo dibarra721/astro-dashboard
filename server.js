@@ -24,7 +24,8 @@ mongoose.connect(
   app.use('/auth', require('./routes/authRouter.js'))
   app.use('/api/dashboard', require('./routes/dashboardRouter.js'))
 //   app.use('/api/forum', require('./routes/forumRouter.js'))
-  app.use('/api/waterforum', require('./routes/waterForumRouter.js'))
+  app.use('/api/water', require('./routes/waterRouter.js'))
+  app.use('/api/earth', require('./routes/earthRouter.js'))
 
 
 
