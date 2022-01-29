@@ -14,40 +14,64 @@ note:{
     required:true
 },
 first:{
-    type:String
+    type:String,
+    enum: ['Aries', 'Taurus','Gemini', 'Cancer', 'Leo', 'Virgo', 'Libra', 'Scorpio','Sagittarius', 'Capricorn','Aquarius', 'Pisces' ],
+
 },
 second:{
-    type:String
+    type:String,
+    enum: ['Aries', 'Taurus','Gemini', 'Cancer', 'Leo', 'Virgo', 'Libra', 'Scorpio','Sagittarius', 'Capricorn','Aquarius', 'Pisces' ],
+
 },
 third:{
-    type:String
+    type:String,
+    enum: ['Aries', 'Taurus','Gemini', 'Cancer', 'Leo', 'Virgo', 'Libra', 'Scorpio','Sagittarius', 'Capricorn','Aquarius', 'Pisces' ],
+
 },
 fourth:{
-    type:String
+    type:String,
+    enum: ['Aries', 'Taurus','Gemini', 'Cancer', 'Leo', 'Virgo', 'Libra', 'Scorpio','Sagittarius', 'Capricorn','Aquarius', 'Pisces' ],
+
 },
 fifth:{
-    type:String
+    type:String,
+    enum: ['Aries', 'Taurus','Gemini', 'Cancer', 'Leo', 'Virgo', 'Libra', 'Scorpio','Sagittarius', 'Capricorn','Aquarius', 'Pisces' ],
+
 },
 sixth:{
-    type:String
+    type:String,
+    enum: ['Aries', 'Taurus','Gemini', 'Cancer', 'Leo', 'Virgo', 'Libra', 'Scorpio','Sagittarius', 'Capricorn','Aquarius', 'Pisces' ],
+
 },
 seventh:{
-    type:String
+    type:String,
+    enum: ['Aries', 'Taurus','Gemini', 'Cancer', 'Leo', 'Virgo', 'Libra', 'Scorpio','Sagittarius', 'Capricorn','Aquarius', 'Pisces' ],
+
 },
 eighth:{
-    type:String
+    type:String,
+    enum: ['Aries', 'Taurus','Gemini', 'Cancer', 'Leo', 'Virgo', 'Libra', 'Scorpio','Sagittarius', 'Capricorn','Aquarius', 'Pisces' ],
+
 },
 ninth{
-    type:String
+    type:String,
+    enum: ['Aries', 'Taurus','Gemini', 'Cancer', 'Leo', 'Virgo', 'Libra', 'Scorpio','Sagittarius', 'Capricorn','Aquarius', 'Pisces' ],
+
 },
 tenth:{
-    type:String
+    type:String,
+    enum: ['Aries', 'Taurus','Gemini', 'Cancer', 'Leo', 'Virgo', 'Libra', 'Scorpio','Sagittarius', 'Capricorn','Aquarius', 'Pisces' ],
+
 },
 eleventh:{
-    type:String
+    type:String,
+    enum: ['Aries', 'Taurus','Gemini', 'Cancer', 'Leo', 'Virgo', 'Libra', 'Scorpio','Sagittarius', 'Capricorn','Aquarius', 'Pisces' ],
+
 },
 twelfth:{
-    type:String
+    type:String,
+    enum: ['Aries', 'Taurus','Gemini', 'Cancer', 'Leo', 'Virgo', 'Libra', 'Scorpio','Sagittarius', 'Capricorn','Aquarius', 'Pisces' ],
+
 },
 
 user:{
