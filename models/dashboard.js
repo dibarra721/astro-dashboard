@@ -13,9 +13,43 @@ note:{
     type:String,
     required:true
 },
-list:{
+first:{
     type:String
 },
+second:{
+    type:String
+},
+third:{
+    type:String
+},
+fourth:{
+    type:String
+},
+fifth:{
+    type:String
+},
+sixth:{
+    type:String
+},
+seventh:{
+    type:String
+},
+eighth:{
+    type:String
+},
+ninth{
+    type:String
+},
+tenth:{
+    type:String
+},
+eleventh:{
+    type:String
+},
+twelfth:{
+    type:String
+},
+
 user:{
     type:Schema.Types.ObjectId,
     ref:"User",
