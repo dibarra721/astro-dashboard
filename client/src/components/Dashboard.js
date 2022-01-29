@@ -1,5 +1,5 @@
-import React, {useState, useContext} from "react";
-import { UserContext } from "../context/UserProvider";
+import React from "react";
+// import { UserContext } from "../context/UserProvider";
 
 export default function Dashboard(props){
 
@@ -8,6 +8,8 @@ export default function Dashboard(props){
         fourth,fifth,sixth,seventh,eighth,ninth,
         tenth,eleventh,twelfth
     }= props
+
+    // const {addDashboard}= useContext(UserContext)
 
 
     return(
@@ -39,17 +41,6 @@ export default function Dashboard(props){
             </div>
             </>
     )
-
-
-
-
-
-
-
-
-
-
-
 
 
 }

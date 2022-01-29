@@ -18,13 +18,14 @@ function UserProvider(props){
     const initState = {
         user: JSON.parse(localStorage.getItem('user')) || {},
         token: localStorage.getItem('token') || "",
-        issues: JSON.parse(localStorage.getItem("dashboard")) ||[],
+       dashboard: JSON.parse(localStorage.getItem("dashboard")) ||[],
         comment:JSON.parse(localStorage.getItem("comment")) ||[],
         errMsg: ""
     }
 
     const [userState, setUserState] = useState(initState)
-    const [dashboard, setDashboard]=useState()
+    const [dashboard, setDashboard]=useState([])
+    const [userDashboard, setUserDashboard]=useState([])
 
     function signup(credentials) {
         axios.post('/auth/signup', credentials)
@@ -46,6 +47,7 @@ function UserProvider(props){
                 const { user, token } = res.data
                 localStorage.setItem('token', token)
                 localStorage.setItem('user', JSON.stringify(user))
+                getDashboard()
                 getUserDashboard()
                 setUserState(prevUserState => ({
                     ...prevUserState,
@@ -84,18 +86,18 @@ function UserProvider(props){
 }
   
 
-function getUserDashboard(){
-    function getUserIssues() {
-        userAxios.get('/api/dashboard/user')
-            .then(res => {
-                setUserState(prevState => ({
-                    ...prevState,
-                    dashboard: res.data
-                }))
-            })
-            .catch(err => console.log(err))
-    }
+function getUserDashboard() {
+    userAxios.get('/api/dashboard/user')
+        .then(res => {
+            setUserState(prevState => ({
+                ...prevState,
+                dashboard: res.data
+            }))
+            setUserDashboard(res.data)
+        })
+        .catch(err => console.log(err))
 }
+
 
 function addDashboard(newDashboard) {
     userAxios.post('/api/dashboard', newDashboard)
@@ -121,7 +123,8 @@ return(
         getDashboard,
         addDashboard,
         getUserDashboard,
-        dashboard
+        dashboard,
+        userDashboard
      
     }}>
 

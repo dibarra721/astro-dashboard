@@ -1,17 +1,41 @@
-import React from "react";
+import React, { useContext , useEffect} from "react";
 import DashForm from "../forms/DashForm"
+import { UserContext } from "../context/UserProvider.js"
+import DashboardList from "./DashboardList";
 
 
 
-export default function PrivateDashboard(){
+export default function PrivateDashboard(props){
 
+const {
+    user: {username},
+    addDashboard,
+    getUserDashboard,
+    dashboard,
+    userDashboard
+    
+}
+=useContext(UserContext)
+
+
+useEffect(() => {
+    getUserDashboard()
+}, [])
 
 
 return(
-    <><h1>This is the dashboard</h1>
+    <><h1> {username} This is  your personal dashboard</h1>
     
     
-    <DashForm /></>
+    <DashForm  addDashboard={addDashboard}/>
+
+
+
+<div className="populatedDash">
+<DashboardList dashboard={userDashboard}/>
+
+</div>
+</>
 )
 
 

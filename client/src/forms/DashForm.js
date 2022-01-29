@@ -18,7 +18,7 @@ const initInputs = {
 }
 
 
-export default function AddDashboard(props){
+export default function AddDashboardForm(props){
 
     const [inputs, setInputs] = useState(initInputs)
     const { addDashboard} = props

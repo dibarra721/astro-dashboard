@@ -6,18 +6,31 @@ const Dashboard = require('../models/dashboard')
 
 // Get all dashboards 
 dashboardRouter.get("/", (req, res, next) => {
-    Dashboard.find((err, dashboards) => {
+    Dashboard.find((err, dashboard) => {
         if(err){
         res.status(500)
         return next(err)
     }
-    return res.status(200).send(dashboards)
+    return res.status(200).send(dashboard)
     })
 })
 
-// get all dashboards by userID
+// get all dashboards by user
 
-dashboardRouter.get("/user", (req, res, next) => {
+dashboardRouter.get('/user', (req, res, next) => {
+    Dashboard.find({ user: req.user._id}, ( err, dashboard) => {
+        if(err){
+            res.status(500)
+            return next(err)
+        }
+        return res.status(200).send(dashboard)
+    })
+})
+
+
+// get dashboard by user id
+
+dashboardRouter.get("/user/:userId", (req, res, next) => {
     Dashboard.find({ user: req.user._id}, ( err, dashboards) => {
         if(err){
             res.status(500)
@@ -26,23 +39,6 @@ dashboardRouter.get("/user", (req, res, next) => {
         return res.status(200).send(dashboards)
     })
 })
-
-
-// get dashboard by user id
-
-dashboardRouter.get("/user", (req, res, next) => {
-    Dashboard.find({user : req.user._id}, (err, dashboards) => {
-
-        if(err){
-            res.status(500)
-            return next(err)
-        }
-        return res.status(200).send(dashboards)
-    })
-})
-
-
-
 
 
 
