@@ -2,7 +2,7 @@ import React, {useContext} from "react"
 import { Route, Switch, Redirect} from "react-router-dom";
 import Navbar from "./components/Navbar.js"
 import Auth from "./components/Auth.js"
-import Dashboard from "./components/Dashboard"
+import PrivateDashboard from "./components/PrivateDashboard"
 import ProtectedRoute from "./components/ProtectedRoute.js"
 import { UserContext} from "./context/UserProvider"
 import './App.css'
@@ -30,7 +30,7 @@ return(
       render={() => token ? <Redirect to="/dashboard" /> : <Auth />} />
     <ProtectedRoute
       path="/dashboard"
-      component={Dashboard}
+      component={PrivateDashboard}
       redirectTo="/"
       token={token} />
     {/* <ProtectedRoute

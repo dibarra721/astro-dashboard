@@ -53,7 +53,7 @@ eighth:{
     enum: ['Aries', 'Taurus','Gemini', 'Cancer', 'Leo', 'Virgo', 'Libra', 'Scorpio','Sagittarius', 'Capricorn','Aquarius', 'Pisces' ],
 
 },
-ninth{
+ninth:{
     type:String,
     enum: ['Aries', 'Taurus','Gemini', 'Cancer', 'Leo', 'Virgo', 'Libra', 'Scorpio','Sagittarius', 'Capricorn','Aquarius', 'Pisces' ],
 
@@ -78,7 +78,11 @@ user:{
     type:Schema.Types.ObjectId,
     ref:"User",
     required:true
-}
+},
+created:{
+    type: Date,
+    default: Date.now
+},
 
 })
 
