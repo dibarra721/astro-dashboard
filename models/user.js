@@ -23,7 +23,7 @@ memberSince:{
     type: Date,
     default: Date.now
 },
-comments: {
+comment: {
     type: Array,
     default: []
   },

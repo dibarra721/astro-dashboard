@@ -72,8 +72,11 @@ waterRouter.get('/water', (req, res, next) => {
 
 // post to water forum
 
-waterRouter.post('/comment', (req, res, next) => {
-    req.body.userId = req.user._id
+waterRouter.post("/", (req, res, next) => {
+  // req.body.user = req.user._id
+  req.body.user = req.user._id
+
+    // req.body.userId = req.user._id
     req.body.username = req.user.username
     req.body.commentId = req.params.commentId
     const newComment = new Comment(req.body)
@@ -81,7 +84,7 @@ waterRouter.post('/comment', (req, res, next) => {
         (err, watercomment) => {
             if (err) {
                 res.status(500)
-                next(err)
+                return next(err)
             }
             return res.status(201).send(watercomment)
         }

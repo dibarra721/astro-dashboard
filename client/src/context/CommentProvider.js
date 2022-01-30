@@ -27,9 +27,11 @@ function CommentProvider(props){
         .catch(err => console.log(err.response.data.errMsg))
 }
 
-function postWaterComment(){
-    userAxios.get("/api/water/comment")
-    .then(res => setWaterComments(res.data))
+function postWaterComment(newComment){
+    userAxios.post(`/api/water`, newComment)
+    .then(res => {
+        setWaterComments(prevState => [...prevState, res.data])
+    })
     .catch(err => console.log(err.response.data.errMsg))
 }
 
@@ -71,7 +73,9 @@ value={{
 getEarthComments,
 getWaterComments,
 postEarthComment,
-postWaterComment
+postWaterComment,
+waterComments,
+earthComments
 
 
 

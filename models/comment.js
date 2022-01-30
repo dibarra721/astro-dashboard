@@ -5,10 +5,10 @@ const Schema = mongoose.Schema
 
 const commentSchema = new Schema({
 
-    comment: {
-        type:String,
-        required:true
-    },
+  comment: {
+    type: String,
+    required: true
+  },
 
     postedOn:{
         type: Date,
@@ -21,22 +21,27 @@ const commentSchema = new Schema({
     //     required: true
     //   }, 
 
-      userId: {
-        type: Schema.Types.ObjectId,
-        ref: "User",
-        required: true
-      },
+      // userId: {
+      //   type: Schema.Types.ObjectId,
+      //   ref: "User",
+      //   required: true
+      // },
+      user:{
+        type:Schema.Types.ObjectId,
+        ref:"User",
+        required:true
+    },
 
       username: {
         type: String,
         required: true
       },
 
-      // commentId:{
-      //   type: Schema.Types.ObjectId,
-      //   ref: "User",
-      //   required: true
-      // }
+      commentId:{
+        type: Schema.Types.ObjectId,
+        ref: "User",
+        // required: true
+      }
     
 })
 
