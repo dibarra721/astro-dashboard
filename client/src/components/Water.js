@@ -10,13 +10,14 @@ export default function Water(){
     const {
         postWaterComment,
         waterComments,
-        getWaterComments
+        getWaterComments,
+        
         
     }
     =useContext(CommentContext)
 
     useEffect(() => {
-        getWaterComments()
+       getWaterComments()
     }, [])
     
 
@@ -24,7 +25,7 @@ export default function Water(){
     <><h2>Hello Start the Conversation Below</h2>
     
     
-    <CommentForm postWaterComments={postWaterComment} />
+    <CommentForm postWaterComment={postWaterComment} />
     {waterComments.map(comment => <Comment key={comment._id} waterComments={waterComments} {...comment}   />)}
 
     

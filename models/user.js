@@ -31,6 +31,10 @@ comment: {
   dashboard: {
     type:Array,
     default:[]
+  },
+  earth: {
+    type: Array,
+    default: []
   }
 
 

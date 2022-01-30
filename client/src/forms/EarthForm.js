@@ -10,7 +10,7 @@ const initInputs ={
 export default function CommentForm(props){
 
 
-const {_id, postWaterComment}=useContext(CommentContext)
+const {_id, postEarthComment}=useContext(CommentContext)
 const [inputs, setInputs]= useState(initInputs)
 
 
@@ -20,6 +20,7 @@ function handleChange(e) {
         ...prevInputs,
         [name]: value
     }))
+
 }
 
 const {comment}=inputs
@@ -31,7 +32,7 @@ return(
 
 <form style={{height:"80px"}} onSubmit={(e) => {
                 e.preventDefault()
-                postWaterComment(inputs, _id)
+                postEarthComment(inputs, _id)
                 setInputs(initInputs)
                 console.log(inputs)
             }}>

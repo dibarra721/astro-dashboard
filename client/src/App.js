@@ -45,7 +45,7 @@ return(
        <ProtectedRoute
       path="/water"
       component={Water}
-      redirectTo="/water"
+      redirectTo="/"
       token={token} 
       />
        <ProtectedRoute
@@ -57,13 +57,13 @@ return(
       <ProtectedRoute
       path="/air"
       component={Air}
-      redirectTo="/air"
+      redirectTo="/"
       token={token} 
      />
       <ProtectedRoute
       path="/fire"
       component={Fire}
-      redirectTo="/fire"
+      redirectTo="/"
       token={token} 
      />
     {/* <Route path="*" element={<NotFound />} render={() => <NotFound />} /> */}

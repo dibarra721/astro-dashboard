@@ -1,55 +1,55 @@
 const express = require('express')
 const earthRouter= express.Router()
-const Comment= require('../models/comment')
+const Earth= require('../models/earth')
 
 
 
 // get all comments 
-earthRouter.get("/comment", (req, res, next) => {
-    Comment.find((err,comments) => {
+earthRouter.get("/", (req, res, next) => {
+   Earth.find((err,earthComments) => {
         if (err){
             res.status(500)
             return next(err)
         }
-        return res.status(200).send(comments)
+        return res.status(200).send(earthComments)
     })
 })
 
 
 earthRouter.get('/user', (req, res, next) => {
-  Comment.find({ user: req.user._id }, (err, comments) => {
+Earth.find({ user: req.user._id }, (err, earthComments) => {
       if(err){
         res.status(500)
         return next(err)
       }
-      return res.status(200).send(comments)
+      return res.status(200).send(earthComments)
     })
   })
 
 
 earthRouter.get("/user/:userId", (req, res, next) => {
- Comment.find(
+Earth.find(
     //   { user: req.params.userId },
-      (err, comments) => {
+      (err, earthComments) => {
         if (err) {
           res.status(500)
           return next(err)
         }
-        return res.status(200).send(comments)
+        return res.status(200).send(earthComments)
       })
   })
   
   //get a comment by the id
-earthRouter.get('/:commentId', (req, res, next) => {
-    Comment.findById(req.params.commentId, (err, comment) => {
+earthRouter.get('/:earthId', (req, res, next) => {
+  Earth.findById(req.params.earthId, (err, earthcomment) => {
       if (err) {
         res.status(500)
         return next(err)
-      } else if (!comment) {
+      } else if (!earthcomment) {
         res.status(404)
         return next(new Error('No post item has been found.'))
       }
-      return res.send(comment)
+      return res.send(earthcomment)
     })
   })
 
@@ -57,8 +57,8 @@ earthRouter.get('/:commentId', (req, res, next) => {
 
 // earth comments
 earthRouter.get('/earth', (req, res, next) => {
-    Comment.find(
-        { commentId: req.params.commentId },
+   Earth.find(
+        { earthId: req.params.earthId },
         (err, earthcomments) => {
             if (err) {
                 res.status(500)
@@ -72,16 +72,16 @@ earthRouter.get('/earth', (req, res, next) => {
 
 // post to earth forum
 
-earthRouter.post('/comment', (req, res, next) => {
-    req.body.userId = req.user._id
+earthRouter.post("/", (req, res, next) => {
+    req.body.user = req.user._id
     req.body.username = req.user.username
-    req.body.commentId = req.params.commentId
-    const newComment = new Comment(req.body)
-    newComment.save(
+    req.body.earthId = req.params.earthId
+    const newEarth = new Earth(req.body)
+    newEarth.save(
         (err, earthcomment) => {
             if (err) {
                 res.status(500)
-                next(err)
+               return  next(err)
             }
             return res.status(201).send(earthcomment)
         }
@@ -89,7 +89,7 @@ earthRouter.post('/comment', (req, res, next) => {
 })
 // update water comment
 earthRouter.put('/comment/:commentId', (req, res, next) => {
-    Comment.findOneAndUpdate(
+  Earth.findOneAndUpdate(
       { _id: req.params.commentId, user: req.user._id },
       req.body,
       { new: true },

@@ -20,6 +20,8 @@ function UserProvider(props){
         token: localStorage.getItem('token') || "",
        dashboard: JSON.parse(localStorage.getItem("dashboard")) ||[],
         comment:JSON.parse(localStorage.getItem("comment")) ||[],
+        earth:JSON.parse(localStorage.getItem("earth")) ||[],
+
         errMsg: ""
     }
 
@@ -62,11 +64,14 @@ function UserProvider(props){
         localStorage.removeItem('user')
         localStorage.removeItem("dashboard")
         localStorage.removeItem("comment")
+        localStorage.removeItem("earth")
+
         setUserState({
             user: {},
             token: "",
             dashboard: [],
-            comment: []
+            comment: [],
+            earth:[]
         })
     }
 

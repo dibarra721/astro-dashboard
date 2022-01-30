@@ -23,7 +23,9 @@ function CommentProvider(props){
 // get all Water comments 
     function getWaterComments() {
         userAxios.get("/api/water")
-        .then(res => setWaterComments(res.data))
+        .then(res => {
+            setWaterComments(res.data)}
+            )
         .catch(err => console.log(err.response.data.errMsg))
 }
 
@@ -31,23 +33,33 @@ function postWaterComment(newComment){
     userAxios.post(`/api/water`, newComment)
     .then(res => {
         setWaterComments(prevState => [...prevState, res.data])
+        setWaterUserComments(prevState => [...prevState, res.data])
+
     })
     .catch(err => console.log(err.response.data.errMsg))
+    
 }
 
 
 
 // get all Earth Comments 
 function getEarthComments() {
-    userAxios.get("/api/earthr")
-    .then(res => setEarthComments(res.data))
+    userAxios.get("/api/earth")
+    .then(res => {
+        setEarthComments(res.data)}
+        )
     .catch(err => console.log(err.response.data.errMsg))
 }
 
-function postEarthComment(){
-    userAxios.get("/api/earth/comment")
-    .then(res => setWaterComments(res.data))
+function postEarthComment(newComment){
+    userAxios.post(`/api/earth`, newComment)
+    .then(res => {
+    setEarthComments(prevState => [...prevState, res.data])
+    setEarthUserComments(prevState => [...prevState, res.data])
+    })
     .catch(err => console.log(err.response.data.errMsg))
+ 
+
 }
 
 
@@ -75,7 +87,7 @@ getWaterComments,
 postEarthComment,
 postWaterComment,
 waterComments,
-earthComments
+earthComments,
 
 
 
