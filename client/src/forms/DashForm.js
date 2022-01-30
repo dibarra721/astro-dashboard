@@ -44,7 +44,8 @@ export default function AddDashboardForm(props){
 
 
          return(
-
+                 <>
+                <div className="dashForm">
             <center>
                 <form onSubmit={handleSubmit}>
 
@@ -283,7 +284,8 @@ Eleventh:
                 </form>
             </center>
 
-
+</div>
+</>
 
 
 

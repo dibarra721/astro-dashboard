@@ -24,7 +24,7 @@ useEffect(() => {
 
 
 return(
-    <><h1> {username} This is  your personal dashboard</h1>
+    <><h1> {username} Welcome to your dashboard</h1>
     
     
     <DashForm  addDashboard={addDashboard}/>
@@ -32,6 +32,7 @@ return(
 
 
 <div className="populatedDash">
+
 <DashboardList dashboard={userDashboard}/>
 
 </div>

@@ -6,7 +6,11 @@ import PrivateDashboard from "./components/PrivateDashboard"
 import ProtectedRoute from "./components/ProtectedRoute.js"
 import { UserContext} from "./context/UserProvider"
 import './App.css'
-
+import ForumHome from "./components/Forum.js";
+import Water from "./components/Water.js";
+import Earth from "./components/Earth.js";
+import Air from "./components/Air.js";
+import Fire from "./components/Fire.js";
 
 
 
@@ -33,11 +37,35 @@ return(
       component={PrivateDashboard}
       redirectTo="/"
       token={token} />
-    {/* <ProtectedRoute
+    <ProtectedRoute
       path="/forum"
-      component={Public}
+      component={ForumHome}
       redirectTo="/"
-      token={token} /> */}
+      token={token} />
+       <ProtectedRoute
+      path="/water"
+      component={Water}
+      redirectTo="/water"
+      token={token} 
+      />
+       <ProtectedRoute
+      path="/earth"
+      component={Earth}
+      redirectTo="/"
+      token={token} 
+     />
+      <ProtectedRoute
+      path="/air"
+      component={Air}
+      redirectTo="/air"
+      token={token} 
+     />
+      <ProtectedRoute
+      path="/fire"
+      component={Fire}
+      redirectTo="/fire"
+      token={token} 
+     />
     {/* <Route path="*" element={<NotFound />} render={() => <NotFound />} /> */}
 
   </Switch>

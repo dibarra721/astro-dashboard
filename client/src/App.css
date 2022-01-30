@@ -1,7 +1,112 @@
 body{
   background-color: antiquewhite;
+  background-image:url('./media/cosmoTwo.png');
+  color:whitesmoke;
+  margin: 0;
+  padding: 0px;
+  margin-bottom: 0;
+  font-family: 'Lora', serif;
+
 }
 
 button{
  margin-top: 5px;
+ background-color: blueviolet;
+ color: whitesmoke;
+ border: 1px;
+  border-color: whitesmoke;
+  border-radius: 2px;
+}
+
+
+img{
+  height: 300px;
+  width: auto;
+}
+
+.populatedDash{
+background-color: #FBDCE298;
+color: black;
+align-items: center;
+width: 600px;
+height: 300px;
+overflow-y: scroll;
+align-self: center;
+grid-column: 2/3;
+grid-row:3/3;
+}
+
+#root {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 400px, 400px, 100px;
+  width: 100%;
+  bottom: 0;
+}
+
+.wrapper {
+  display: grid;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 400px, 400px, 100px;
+
+}
+
+.dashboardLists{
+  margin-left: 100px;
+  
+}
+
+.dashForm{
+  margin-top: 10px;
+  grid-column: 2/3;
+  grid-row:2/3;
+  background-color: #FBDCE298;
+color: black;
+width: 600px;
+border: tomato 3px groove;
+}
+
+h1{
+  font-family: 'Supermercado One', cursive;
+  font-size: 44px;
+  color: black;
+}
+
+.navBar {
+  background-color: whitesmoke;
+ grid-column: 1/4;
+ grid-row: 1/1;
+ list-style: none;
+ padding-top: 10px;
+ font-weight: 600;
+}
+
+/* li {
+  float: left;
+} */
+
+li a {
+  display: block;
+  color: #b6bed3;
+  padding: 7px 300px;
+  text-decoration: none;
+  grid-row: 1/1;
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+/* Change the link color  on hover */
+li a:hover {
+  text-decoration: underline #f6f7f1;
+color: black;
+  background-color: #b6bed3;
+  transition: 2s;
 }
