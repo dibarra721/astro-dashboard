@@ -8,10 +8,11 @@ const {comment, username} = props
 
 return (
     <>
+    <div className="comments">
+        <br/>
     <p>"{comment}"</p>
     <p>Comment submitted by: @{username}</p>
-   
-    {/* <button onClick={()=> deleteComment(_id)}>Delete Comment</button> */}
+    </div>
     </>
 )
 

@@ -18,10 +18,9 @@ function UserProvider(props){
     const initState = {
         user: JSON.parse(localStorage.getItem('user')) || {},
         token: localStorage.getItem('token') || "",
-       dashboard: JSON.parse(localStorage.getItem("dashboard")) ||[],
+        dashboard: JSON.parse(localStorage.getItem("dashboard")) ||[],
         comment:JSON.parse(localStorage.getItem("comment")) ||[],
         earth:JSON.parse(localStorage.getItem("earth")) ||[],
-
         errMsg: ""
     }
 
@@ -127,7 +126,18 @@ function editDashboard(newDashboard, dashboardId){
             )
     }
 
+function deleteDashboard(dashboardId){
+userAxios.delete(`/api/dashboard/${dashboardId}`)
+            .then(res => setUserState(prevState => ({
+                ...prevState,
+               dashboard: prevState.issues.filter(dashboard => dashboard._id !== dashboardId),
 
+            })))
+            .catch(err => console.log(err)
+            )
+        return getUserDashboard()
+        
+    }
 
 
 
@@ -144,6 +154,7 @@ return(
         addDashboard,
         getUserDashboard,
         editDashboard,
+        deleteDashboard,
         dashboard,
         userDashboard,
       

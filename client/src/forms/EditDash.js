@@ -44,7 +44,7 @@ export default function EditDash(props) {
          tenth,eleventh,twelfth} = inputs
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form  style= {{backgroundColor:'white'}}id="editDashForm" onSubmit={handleSubmit}>
 
         ImgUrl:
         <input 

@@ -11,7 +11,6 @@ const {
     user: {username},
     addDashboard,
     getUserDashboard,
-    dashboard,
     userDashboard
     
 }
@@ -25,6 +24,7 @@ useEffect(() => {
 
 return(
     <><h1> {username} Welcome to your dashboard</h1>
+    <p>Click <a href="https://astro.cafeastrology.com/natal.php" target="_blank" rel="noreferrer"> here</a> to get your birthchart and paste the imgUrl in the form.</p>
     
     
     <DashForm  addDashboard={addDashboard}/>

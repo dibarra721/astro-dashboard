@@ -46,7 +46,7 @@ export default function AddDashboardForm(props){
          return(
                  <>
                 <div className="dashForm">
-            <center>
+            <center> <span>A note value must be added </span> <br></br>
                 <form onSubmit={handleSubmit}>
 
             ImgUrl:

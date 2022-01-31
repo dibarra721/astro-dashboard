@@ -1,11 +1,14 @@
 body{
   background-color: antiquewhite;
-  background-image:url('./media/cosmoTwo.png');
+  background-image: linear-gradient( 122.3deg,  rgba(111,71,133,1) 14.6%, rgba(232,129,166,1) 29.6%, rgba(237,237,183,1) 42.1%, rgba(244,166,215,1) 56.7%, rgba(154,219,232,1) 68.7%, rgba(238,226,159,1) 84.8% );
+  /* background-image:url('./media/cosmoTwo.png'); */
   color:whitesmoke;
+  background-size: cover; 
   margin: 0;
   padding: 0px;
   margin-bottom: 0;
   font-family: 'Lora', serif;
+
 
 }
 
@@ -22,6 +25,7 @@ button{
 img{
   height: 300px;
   width: auto;
+  margin-top: 10px;
 }
 
 .populatedDash{
@@ -72,7 +76,8 @@ grid-row:3/3;
   background-color: #FBDCE298;
 color: black;
 width: 600px;
-border: tomato 3px groove;
+
+border: rgba(244,166,215,1) 3px dashed;
 }
 
 h1{
@@ -82,21 +87,18 @@ h1{
 }
 
 .navBar {
-  background-color: whitesmoke;
+  background-color:rgba(238,226,159,1);
  grid-column: 1/4;
  grid-row: 1/1;
  list-style: none;
  padding-top: 10px;
  font-weight: 600;
+ 
 }
-
-/* li {
-  float: left;
-} */
 
 li a {
   display: block;
-  color: #b6bed3;
+  color: black;
   padding: 7px 300px;
   text-decoration: none;
   grid-row: 1/1;
@@ -107,6 +109,82 @@ li a {
 li a:hover {
   text-decoration: underline #f6f7f1;
 color: black;
-  background-color: #b6bed3;
+  background-color: rgba(237,237,183,1);
   transition: 2s;
 }
+
+
+ul{
+  background: rgba(237,237,183,1);
+  list-style: none;
+  width: 300px;
+  border-left: 5px solid rgba(244,166,215,1);
+
+}
+
+span{
+  border-left: 5px solid rgba(111,71,133,1);
+  background: rgba(154,219,232,1);
+
+}
+
+.forumstyle{
+  background-image: linear-gradient( 89.1deg,  rgba(251,0,83,1) 15.2%, rgba(179,146,231,1) 98.5% );
+  grid-column: 2/3;
+}
+
+form{
+  margin-top: 10px;
+}
+
+.comments{
+  background-image: linear-gradient( 109.6deg,  rgba(218,185,252,1) 11.2%, rgba(125,89,252,1) 91.1% );
+  background-size: cover; 
+
+  width: 300px;
+  height: auto;
+  margin-left: 10%;
+  margin-bottom: 10%;
+  grid-column: 2/3;
+}
+
+
+@media (max-width: 700px){
+  .wrapper{
+  display: grid;
+  margin-top: 0px;
+  margin-bottom: 0px;
+ grid-template-columns: 1fr;
+  width: 100%;
+  grid-template-rows: 1fr, 1fr, 1fr;
+  }
+
+
+  #root {
+    margin-top: 0;
+    grid-template-columns: 1fr;
+    display: grid;
+    grid-template-rows: (3, 1fr);
+    width: 100%;
+    bottom: 0;
+    top: 0;
+  }
+  .comments{
+    background-image: linear-gradient( 109.6deg,  rgba(218,185,252,1) 11.2%, rgba(125,89,252,1) 91.1% );
+    background-size: cover; 
+
+    /* width: fit-content;
+    height: 200px; */
+    /* margin-left: 10%;
+    margin-bottom: 10%;; */
+    grid-column: 3/3;
+    grid-row:2/3;
+    overflow-y: scroll;
+  }
+
+
+
+
+}
+
+
