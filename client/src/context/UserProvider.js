@@ -117,6 +117,21 @@ function addDashboard(newDashboard) {
 }
 
 
+function editDashboard(newDashboard, dashboardId){
+    userAxios.put(`/api/dashboard/${dashboardId}`, newDashboard)
+            .then(res => setUserState(prevState => ({
+                ...prevState,
+                dashboard: prevState.dashboard.map(dashboard => dashboard._id !== dashboardId ? dashboard : res.data)
+            })))
+            .catch(err => console.log(err)
+            )
+    }
+
+
+
+
+
+
 return(
 
     <UserContext.Provider
@@ -128,6 +143,7 @@ return(
         getDashboard,
         addDashboard,
         getUserDashboard,
+        editDashboard,
         dashboard,
         userDashboard,
       

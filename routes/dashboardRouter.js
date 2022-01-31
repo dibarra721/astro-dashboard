@@ -1,4 +1,5 @@
 const express = require('express')
+const dashboard = require('../models/dashboard')
 const dashboardRouter = express.Router()
 const Dashboard = require('../models/dashboard')
 
@@ -30,15 +31,19 @@ dashboardRouter.get('/user', (req, res, next) => {
 
 // get dashboard by user id
 
-dashboardRouter.get("/user/:userId", (req, res, next) => {
-    Dashboard.find({ user: req.user._id}, ( err, dashboards) => {
-        if(err){
-            res.status(500)
-            return next(err)
+dashboardRouter.get("/user/:dashboardId", (req, res, next) => {
+    Dashboard.findById(req.params.dashboardId, (err, dashboard) => {
+        if (err) {
+          res.status(500)
+          return next(err)
+        } else if (!dashboard) {
+          res.status(404)
+          return next(new Error('No post item has been found.'))
         }
-        return res.status(200).send(dashboards)
+        return res.send(dashboard)
+      })
     })
-})
+
 
 
 
@@ -58,7 +63,19 @@ dashboardRouter.post("/", (req, res, next) => {
 
 
 
-
+//get a dashbpard by the id
+dashboardRouter.get('/:dashboardId', (req, res, next) => {
+    Dashboard.findById(req.params.dashboardId, (err, dashboard) => {
+      if (err) {
+        res.status(500)
+        return next(err)
+      } else if (!dashboard) {
+        res.status(404)
+        return next(new Error('No post item has been found.'))
+      }
+      return res.send(dashboard)
+    })
+  })
 // update dashboard
 
 dashboardRouter.put("/:dashboardId", (req, res, next) => {
