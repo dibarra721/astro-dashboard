@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+
   "dependencies": {
     "bcrypt": "^5.0.1",
     "dotenv": "^14.3.2",
@@ -13,11 +17,14 @@
     "mongoose": "^6.1.8",
     "morgan": "^1.10.0"
   },
+ 
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
+
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "engines": {
+    "node": "14.17.6"
+  }
 }
