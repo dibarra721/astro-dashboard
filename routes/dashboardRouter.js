@@ -94,4 +94,7 @@ dashboardRouter.put("/:dashboardId", (req, res, next) => {
     )
 })
 
+
+dashboardRouter
+
 module.exports = dashboardRouter

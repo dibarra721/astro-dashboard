@@ -30,18 +30,18 @@ export default function Dashboard(props){
                   <div className="dashboardList">
                       <h2>Houses and their Planet</h2>
 <ul>
-                            <li>First: {first}</li>
-                            <li>Second: {second}</li>
-                            <li>Third: {third}</li>
-                            <li> Fourth: {fourth}</li>
-                            <li> Fifth: {fifth}</li>
-                            <li> Sixth: {sixth}</li>
-                            <li> Seventh: {seventh}</li>
-                            <li>Eighth: {eighth}</li>
-                            <li> Ninth: {ninth}</li>
-                            <li> Tenth: {tenth}</li>
-                            <li> Eleventh: {eleventh}</li>
-                            <li> Twelfth: {twelfth}</li>
+                            <li>First House: {first}</li>
+                            <li>Second House: {second}</li>
+                            <li>Third House: {third}</li>
+                            <li> Fourth House: {fourth}</li>
+                            <li> Fifth House: {fifth}</li>
+                            <li> Sixth House: {sixth}</li>
+                            <li> Seventh House : {seventh}</li>
+                            <li> Eighth House: {eighth}</li>
+                            <li> Ninth House: {ninth}</li>
+                            <li> Tenth House: {tenth}</li>
+                            <li> Eleventh House: {eleventh}</li>
+                            <li> Twelfth House: {twelfth}</li>
                             </ul>
 <button onClick={() => setEditToggle(prevState => !prevState)}>Edit Dashboard</button>
 <button onClick={() => deleteDashboard(_id)}>Delete Dashboard</button>

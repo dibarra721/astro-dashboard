@@ -11,6 +11,7 @@ return(
     <>
     
         <h1> Click the links below to Check out the Forums</h1>
+        This Part of the Website is under construction. You can comment on the Water and Earth Forum
     
     <div className="forumstyle">
 

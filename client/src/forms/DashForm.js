@@ -46,7 +46,7 @@ export default function AddDashboardForm(props){
          return(
                  <>
                 <div className="dashForm">
-            <center> <span>A note value must be added </span> <br></br>
+            <center> <span>All fields are required</span> <br></br>
                 <form onSubmit={handleSubmit}>
 
             ImgUrl:
@@ -68,7 +68,7 @@ export default function AddDashboardForm(props){
             />
             <br/>
             If you would like to generate a list of your houses:<br/>
-            First:
+            First House:
             <select onChange={handleChange} value ={first} type="first" id="first"  name="first" >
             <option >Houses</option>
     <option value='Aries'>Aries</option>
@@ -85,7 +85,7 @@ export default function AddDashboardForm(props){
     <option value='Pisces'>Pisces</option>
     </select>
     <br/>
-   Second:
+   Second House:
             <select onChange={handleChange} value ={second} type="second" id="second"  name="second" >
             <option >Houses</option>
     <option value='Aries'>Aries</option>
@@ -102,7 +102,7 @@ export default function AddDashboardForm(props){
     <option value='Pisces'>Pisces</option>
     </select>
     <br/>
-    Third:
+    Third House:
             <select onChange={handleChange} value ={third} type="third" id="third"  name="third" >
             <option >Houses</option>
     <option value='Aries'>Aries</option>
@@ -120,7 +120,7 @@ export default function AddDashboardForm(props){
     </select>
     <br/>
 
-    Fourth:
+    Fourth House:
             <select onChange={handleChange} value ={fourth} type="fourth" id="fourth"  name="fourth" >
             <option >Houses</option>
     <option value='Aries'>Aries</option>
@@ -137,7 +137,7 @@ export default function AddDashboardForm(props){
     <option value='Pisces'>Pisces</option>
     </select>
     <br/>
- Fifth:
+ Fifth House:
             <select onChange={handleChange} value ={fifth} type="fifth" id="fifth"  name="fifth" >
             <option >Houses</option>
     <option value='Aries'>Aries</option>
@@ -154,7 +154,7 @@ export default function AddDashboardForm(props){
     <option value='Pisces'>Pisces</option>
     </select>
     <br/>
-    Sixth:
+    Sixth House:
             <select onChange={handleChange} value ={sixth} type="sixth" id="sixth"  name="sixth" >
             <option >Houses</option>
     <option value='Aries'>Aries</option>
@@ -172,7 +172,7 @@ export default function AddDashboardForm(props){
     </select>
     <br/>
 
-    Seventh:
+    Seventh House:
             <select onChange={handleChange} value ={seventh} type="seventh" id="seventh"  name="seventh" >
             <option >Houses</option>
     <option value='Aries'>Aries</option>
@@ -190,7 +190,7 @@ export default function AddDashboardForm(props){
     </select>
     <br/>
 
-    Eighth:
+    Eighth House:
             <select onChange={handleChange} value ={eighth} type="eighth" id="eighth"  name="eighth" >
             <option >Houses</option>
     <option value='Aries'>Aries</option>
@@ -208,7 +208,7 @@ export default function AddDashboardForm(props){
     </select>
     <br/>
 
-    Ninth:
+    Ninth House:
             <select onChange={handleChange} value ={ninth} type="ninth" id="ninth"  name="ninth" >
             <option >Houses</option>
     <option value='Aries'>Aries</option>
@@ -226,7 +226,7 @@ export default function AddDashboardForm(props){
     </select>
     <br/>
 
-   Tenth:
+   Tenth House:
             <select onChange={handleChange} value ={tenth} type="tenth" id="tenth"  name="tenth" >
             <option >Houses</option>
     <option value='Aries'>Aries</option>
@@ -244,7 +244,7 @@ export default function AddDashboardForm(props){
     </select>
     <br/>
     
-Eleventh:
+Eleventh House:
             <select onChange={handleChange} value ={eleventh} type="eleventh" id="eleventh"  name="eleventh" >
             <option >Houses</option>
     <option value='Aries'>Aries</option>

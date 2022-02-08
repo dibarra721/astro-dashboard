@@ -29,7 +29,7 @@ export default function Auth() {
 
     return (
         <div className="formWrapper">
-            <h1>Astrology Dashboard</h1>
+            <h1>Astrology Dashboard </h1><p> an application for those who want to keep track of their astrological findings, as well as find community</p>
             {!toggle ?
                 <>
                     <AuthForm
