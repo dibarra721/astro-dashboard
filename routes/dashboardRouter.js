@@ -94,6 +94,20 @@ dashboardRouter.put("/:dashboardId", (req, res, next) => {
     )
 })
 
+// delete dashboard 
+
+dashboardRouter.delete("/:dashboardId", (req, res, next) => {
+  Dashboard.findOneAndDelete(
+    { _id: req.params.dashboardId, user: req.user._id},
+    (err, deletedDashboard) => {
+      if (err) {
+        res.status(500)
+        return next(err)
+      }
+      return res.status(200).send(`Successfully deleted issue: ${deletedDashboard.note}`)
+    }
+  )
+})
 
 dashboardRouter
 
