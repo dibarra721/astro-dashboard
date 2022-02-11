@@ -130,7 +130,7 @@ function deleteDashboard(dashboardId){
 userAxios.delete(`/api/dashboard/${dashboardId}`)
             .then(res => setUserState(prevState => ({
                 ...prevState,
-               dashboard: prevState.issues.filter(dashboard => dashboard._id !== dashboardId),
+               dashboard: prevState.dashboard.filter(dashboard => dashboard._id !== dashboardId),
 
             })))
             .catch(err => console.log(err)

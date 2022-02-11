@@ -104,11 +104,10 @@ dashboardRouter.delete("/:dashboardId", (req, res, next) => {
         res.status(500)
         return next(err)
       }
-      return res.status(200).send(`Successfully deleted issue: ${deletedDashboard.note}`)
+      return res.status(200).send(`Successfully deleted dashboard`)
     }
   )
 })
 
-dashboardRouter
 
 module.exports = dashboardRouter
