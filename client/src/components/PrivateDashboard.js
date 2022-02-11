@@ -13,6 +13,7 @@ const {
     addDashboard,
     getUserDashboard,
     userDashboard, 
+    deleteDashboard
    
     
 }
@@ -21,7 +22,7 @@ const {
 
 useEffect(() => {
     getUserDashboard()
-}, [userDashboard])
+}, [userDashboard, deleteDashboard])
 
 
 return(
